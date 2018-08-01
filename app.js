@@ -6,6 +6,7 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const path = require('path');
+const passport = require('passport');
 
 
 const app = express();
@@ -16,6 +17,9 @@ const ideas = require('./routes/ideas');
 
 //Load users routes
 const users = require('./routes/users');
+
+//Passport config
+require('./config/passport')();
 
 
 //Map global promise --get rid of the warning!

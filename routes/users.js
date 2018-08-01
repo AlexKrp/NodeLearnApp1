@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-//const passport = require('passport');
+const passport = require('passport');
 
 //Load User Model
 require('../models/User');
@@ -12,6 +12,16 @@ const User = mongoose.model('users');
 //User Login Form
 router.get('/login',(req,res)=>{
     res.render('users/login');
+});
+
+//Login form post
+router.post('/login',(req,res,next)=>{
+    passport.authenticate('local',{
+        successRedirect: '/ideas',
+        failureRedirect: '/users/login',
+        failureFlash: true,
+
+    })(req,res,next);
 });
 
 //User Register Form
@@ -61,7 +71,7 @@ router.post('/register',(req,res) =>{
                       newUser.password = hash;
                       newUser.save()
                         .then(user => {
-                          req.flash('succes_msg', 'You are now registered and can log in');
+                          req.flash('success_msg', 'You are now registered and can log in');
                           res.redirect('/users/login');
                         })
                         .catch(err => {
