@@ -19,7 +19,7 @@ const ideas = require('./routes/ideas');
 const users = require('./routes/users');
 
 //Passport config
-require('./config/passport')();
+require('./config/passport')(passport);
 
 
 //Map global promise --get rid of the warning!
