@@ -37,7 +37,7 @@ router.get('/edit/:id',ensureAuthenticated,(req,res)=>{
         if(idea.user != req.user.id){
             req.flash('error_msg', 'Not Authorised');
             res.redirect('/ideas');
-        } esle {
+        } else {
             res.render('ideas/edit',{
                 idea: idea
             });

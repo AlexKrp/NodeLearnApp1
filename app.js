@@ -24,8 +24,13 @@ require('./config/passport')(passport);
 
 //Map global promise --get rid of the warning!
 mongoose.Promise = global.Promise;
+
+//DB config 
+const db = require('./config/database');
+
+
 //Connect to DB
-mongoose.connect('mongodb://localhost:27017/vidjot-dev', {
+mongoose.connect(db.mongoURI, {
     useNewUrlParser: true 
 })
 .then(()=> console.log('MongoDB Connected...'))
@@ -102,7 +107,7 @@ app.use('/users',users);
 
 
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 app.listen(port, ()=>{
     console.log(`Server started on port ${port}`);
