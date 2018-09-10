@@ -1,7 +1,7 @@
 {
   "name": "vidjot",
   "version": "1.0.0",
-  "description": "VidJot Save your videos ideas",
+  "description": "VidJot Save your videos ideas and share them",
   "main": "app.js",
   "scripts": {
     

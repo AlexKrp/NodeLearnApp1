@@ -17,3 +17,6 @@ COPY . .
 
 #Expose Container port
 EXPOSE 8081
+
+#Start the App
+CMD [ "npm", "start" ]
