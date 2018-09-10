@@ -29,7 +29,7 @@ router.get('/register',(req,res)=>{
     res.render('users/register');
 });
 
-//Register form POST
+//Register form POST req
 router.post('/register',(req,res) =>{
     let errors = [];
 
