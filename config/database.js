@@ -1,2 +1,2 @@
 
-module.exports = {mongoURI: 'mongodb://gin:a123456@ds111012.mlab.com:11012/vidjot-prod'}
+module.exports = {mongoURI: 'mongodb://127.0.0.1:27017/vidjot-prod'}
